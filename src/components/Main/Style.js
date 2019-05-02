@@ -5,6 +5,9 @@ export const Loading = styled.div `
     color: white;
     text-align: center;
     margin-top: 200px;
+    @media(max-width: 700px) {
+        margin-top: 100px;
+    }
 `
 
 export const Allowed = styled.div `
