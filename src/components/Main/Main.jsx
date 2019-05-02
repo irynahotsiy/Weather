@@ -71,7 +71,7 @@ class Main extends Component {
       if (!isAllowed) {
         return (
           <>
-            <Allowed>Confirm</Allowed>
+            <Allowed>Please, share your location</Allowed>
           </>
         )
       }
