@@ -8,7 +8,16 @@ export const Loading = styled.div `
 `
 
 export const Allowed = styled.div `
-    color: red;
+    text-align: center;
+    margin-top: 200px;
+    color: white;
+    font-size: 1.3rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    @media(max-width: 700px) {
+        margin-top: 0px;
+    }
 `
 
 export const Header = styled.header `
@@ -36,7 +45,7 @@ export const Err = styled.div `
 export const Details = styled.div `
     text-align:center;
     font-size: 1.3rem;
-    font-family:serif;
+    font-family: serif;
     color: #d9f3ef;
     p {
         text-transform: capitalize;
@@ -60,7 +69,7 @@ export const Temp = styled.div `
     span:first-child {
         color: #fcfcfc;
     }
-    
+
     span:last-child {
         cursor: pointer;
         color: hsl(150, 82%, 51%);
