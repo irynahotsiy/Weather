@@ -27,7 +27,6 @@ export const Header = styled.header `
     text-align: center;
     font-size: 4rem;
     color: #ffffff;
-    margin: 0 10px;
     @media(max-width: 700px) {
         font-size: 3rem;
     }
@@ -37,7 +36,6 @@ export const Err = styled.div `
     margin-top: 200px;
     color: white;
    p {
-    
     font-size: 1.3rem;
     letter-spacing: 0.3rem;
     text-transform: uppercase;
@@ -46,6 +44,7 @@ export const Err = styled.div `
    @media(max-width: 360px) {
         margin-top: 100px;
     }
+
 `
 
 export const Details = styled.div `
