@@ -2,17 +2,22 @@ import styled from 'styled-components';
 
 
 export const Loading = styled.div `
-font-size: 3rem;
-color: white;
-align-items: center;
-margin-top: 200px;
+    color: white;
+    align-items: center;
+    margin-top: 200px;
 
 
 `
 export const Header = styled.header `
-    text-align:center;
-    font-size:70px;
-    color:#ffffff;
+    text-align: center;
+    font-size: 5rem;
+    color: #ffffff;
+    margin: 0 10px;
+    
+
+    @media(max-width: 700px) {
+        font-size: 3rem;
+    }
 `
 
 export const Details = styled.div `
@@ -34,6 +39,7 @@ export const Details = styled.div `
         color:hsl(150, 82%, 51%);
         text-decoration: none;
     }
+
 `
 export const Temp = styled.div `
     font-size: 1.5rem;
@@ -216,7 +222,9 @@ export const Ball = styled.div `
             transform: translate(15px);
         }
     }
+    
     `
+  
 
 
 
