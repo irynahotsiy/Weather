@@ -16,7 +16,7 @@ export const Allowed = styled.div `
     text-transform: uppercase;
     font-weight: 500;
     @media(max-width: 700px) {
-        margin-top: 0px;
+        margin-top: 100px;
     }
 `
 
