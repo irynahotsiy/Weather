@@ -5,7 +5,7 @@ export const Loading = styled.div `
     color: white;
     text-align: center;
     margin-top: 200px;
-    @media(max-width: 700px) {
+    @media(max-width: 360px) {
         margin-top: 150px;
     }
 `
@@ -18,7 +18,7 @@ export const Allowed = styled.div `
     letter-spacing: 0.3rem;
     text-transform: uppercase;
     font-weight: 500;
-    @media(max-width: 700px) {
+    @media(max-width: 360px) {
         margin-top: 150px;
     }
 `
@@ -43,7 +43,7 @@ export const Err = styled.div `
     text-transform: uppercase;
     font-weight: 500;
    }
-   @media(max-width: 700px) {
+   @media(max-width: 360px) {
         margin-top: 100px;
     }
 `
