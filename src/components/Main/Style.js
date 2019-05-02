@@ -5,12 +5,15 @@ export const Loading = styled.div `
     color: white;
     align-items: center;
     margin-top: 200px;
-
-
 `
+
+export const Allowed = styled.div `
+    color: red;
+`
+
 export const Header = styled.header `
     text-align: center;
-    font-size: 5rem;
+    font-size: 4rem;
     color: #ffffff;
     margin: 0 10px;
     

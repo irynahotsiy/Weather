@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 import Load from "../Load/load";
-import { Header, Details, Temp, Image } from "./Style";
+import { Header, Details, Temp, Image, Allowed } from "./Style";
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isAllowed: false,
       isLoaded: false
     };
   }
 
   componentDidMount() {
+    this.setState({
+      isAllowed: true,
+    })
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         let lat = position.coords.latitude;
@@ -26,6 +30,7 @@ class Main extends Component {
           .then(
             result => {
               this.setState({
+               
                 isLoaded: true,
                 location: result.name + ", " + result.sys.country,
                 temp: Math.round(result.main.temp),
@@ -61,51 +66,62 @@ class Main extends Component {
   };
 
   render() {
-    const { error, isLoaded, img, location, temp, letter, sky } = this.state;
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      debugger;
-      return (
-        <>
-          <Load />
-        </>
-      );
-    } else {
-      return (
-        <>
-          <Header>
-            Free C<img src={img} alt="Weather-icon" />
-            de Camp
-            <br />
-            Weather App
-          </Header>
-          <Details className="text-center">
-            <p>{location}</p>
-            <Temp>
-              <span>{temp > 0 ? "+" + temp + " °" : temp}</span>
-              <span onClick={this.handleClickLetter}>{letter}</span>
-            </Temp>
-            <p>{sky}</p>
-            <Image>
-              <img src={img} alt="Weather-icon" />
-            </Image>
-
-            <footer>
-              Created by
-              <a
-                href="https://ihotsiy.netlify.com"
-                target="blank"
-                id="color"
-              >
-                {" "}
-                Iryna Vovk
-              </a>
-            </footer>
-          </Details>
-        </>
-      );
+    const { error, isLoaded, isAllowed, img, location, temp, letter, sky } = this.state;
+      if (!isAllowed) {
+        return (
+          <>
+            <Allowed>Confirm</Allowed>
+          </>
+        )
+      }
+      else {
+        if (error) {
+          return <div>Error: {error.message}</div>;
+        } else if (!isLoaded) {
+          debugger;
+          return (
+            <>
+              <Load />
+            </>
+          );
+        } else {
+          return (
+            <>
+              <Header>
+                Free C<img src={img} alt="Weather-icon" />
+                de Camp
+                <br />
+                Weather App
+              </Header>
+              <Details className="text-center">
+                <p>{location}</p>
+                <Temp>
+                  <span>{temp > 0 ? "+" + temp + " °" : temp}</span>
+                  <span onClick={this.handleClickLetter}>{letter}</span>
+                </Temp>
+                <p>{sky}</p>
+                <Image>
+                  <img src={img} alt="Weather-icon" />
+                </Image>
+    
+                <footer>
+                  Created by
+                  <a
+                    href="https://ihotsiy.netlify.com"
+                    target="blank"
+                    id="color"
+                  >
+                    {" "}
+                    Iryna Vovk
+                  </a>
+                </footer>
+              </Details>
+            </>
+          );
+        }
+      }
     }
-  }
-}
+      }
+     
+    
 export default Main;
