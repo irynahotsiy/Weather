@@ -60,6 +60,7 @@ export const Temp = styled.div `
     span:first-child {
         color: #fcfcfc;
     }
+    
     span:last-child {
         cursor: pointer;
         color: hsl(150, 82%, 51%);
