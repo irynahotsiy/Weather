@@ -12,7 +12,7 @@ export const Loading = styled.div `
 
 export const Allowed = styled.div `
     text-align: center;
-    margin-top: 200px;
+    margin-top: 250px;
     color: white;
     font-size: 1.3rem;
     letter-spacing: 0.3rem;

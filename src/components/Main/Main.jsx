@@ -8,17 +8,17 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isAllowed: false,
       isLoaded: false
     };
   }
 
   componentDidMount() {
-    this.setState({
-      isAllowed: true,
-    })
+   
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
+        this.setState ({
+          isAllowed: true
+        })
         let lat = position.coords.latitude;
         let long = position.coords.longitude;
         let url =
@@ -27,6 +27,7 @@ class Main extends Component {
           "&lat=" +
           lat;
         console.log(url);
+        
         fetch(url)
           .then(response => response.json())
           .then(
@@ -47,9 +48,12 @@ class Main extends Component {
               });
             }
           );
+        
+         
       });
     }
   }
+  
 
   handleClickLetter = () => {
     let temp = this.state.temp;
@@ -68,7 +72,7 @@ class Main extends Component {
 
   render() {
     const { error, isLoaded, isAllowed, img, location, temp, letter, sky } = this.state;
-      if (!isAllowed) {
+      if ( !isAllowed ) {
         return (
           <>
             <Allowed>Please, share your location</Allowed>
@@ -76,13 +80,11 @@ class Main extends Component {
         )
       }
       else {
-
         if (this.state.location === "Shuzenji, JP" || error ) {
           return <>
             <Error />
-          </>;
+          </>
         } else if (!isLoaded) {
-          debugger;
           return (
             <>
               <Load />
