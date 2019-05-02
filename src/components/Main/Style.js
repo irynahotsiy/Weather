@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Loading = styled.div `
     color: white;
-    align-items: center;
+    text-align: center;
     margin-top: 200px;
 `
 
@@ -16,11 +16,21 @@ export const Header = styled.header `
     font-size: 4rem;
     color: #ffffff;
     margin: 0 10px;
-    
-
     @media(max-width: 700px) {
         font-size: 3rem;
     }
+`
+export const Err = styled.div `
+    text-align: center;
+    margin-top: 200px;
+    color: white;
+   p {
+    
+    font-size: 1.3rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    font-weight: 500;
+   }
 `
 
 export const Details = styled.div `

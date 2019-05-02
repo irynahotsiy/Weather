@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Load from "../Load/load";
+import Load from "../Load/Load";
+import Error from "../Error/Error";
+
 import { Header, Details, Temp, Image, Allowed } from "./Style";
 
 class Main extends Component {
@@ -30,7 +32,6 @@ class Main extends Component {
           .then(
             result => {
               this.setState({
-               
                 isLoaded: true,
                 location: result.name + ", " + result.sys.country,
                 temp: Math.round(result.main.temp),
@@ -75,8 +76,11 @@ class Main extends Component {
         )
       }
       else {
-        if (error) {
-          return <div>Error: {error.message}</div>;
+
+        if (this.state.location === "Shuzenji, JP" || error ) {
+          return <>
+            <Error />
+          </>;
         } else if (!isLoaded) {
           debugger;
           return (
